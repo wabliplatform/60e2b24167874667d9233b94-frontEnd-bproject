@@ -10,6 +10,7 @@ module.exports = {
 	'tasks' : './javascript/tasks.js',
 	'cretetask' : './javascript/cretetask.js',
 	'viewtask' : './javascript/viewtask.js',
+	'start' : './javascript/start.js',
 },
   output: {
     path: path.resolve(__dirname, 'dist'),

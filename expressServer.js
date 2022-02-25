@@ -36,6 +36,8 @@ class ExpressServer {
 			this.app.get('/cretetask/:id', (req, res) => res.sendFile(path.join(__dirname,'html','cretetask.html')));
 			this.app.get('/viewtask', (req, res) => res.sendFile(path.join(__dirname,'html','viewtask.html')));
 			this.app.get('/viewtask/:id', (req, res) => res.sendFile(path.join(__dirname,'html','viewtask.html')));
+			this.app.get('/start', (req, res) => res.sendFile(path.join(__dirname,'html','start.html')));
+			this.app.get('/start/:id', (req, res) => res.sendFile(path.join(__dirname,'html','start.html')));
 			
     }
   
