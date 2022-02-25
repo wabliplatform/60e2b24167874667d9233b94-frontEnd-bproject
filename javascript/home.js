@@ -1,8 +1,6 @@
 let apiMyprojectsApi = new TempApi.MyprojectsApi();import TempApi from '../src/index';document.getElementById('iolui').onclick = (event) => {
     event.preventDefault();
-    { window.open('/create',"_blank", 'width=600, height=600, location=yes');}};document.getElementById('in3ic').onclick = (event) => {
-    event.preventDefault();
-    { location.href= '/view';}};const onClickPaginationButton = (chunk, pagination) => {
+    {  window.open('/create' ,"_blank", 'width=600, height=600, location=yes');}};const onClickPaginationButton = (chunk, pagination) => {
     for (let i = 0; i < pagination.children.length; i++) {
       if (
         pagination.children[i].classList.value.includes("active") === true
@@ -39,11 +37,6 @@ let apiMyprojectsApi = new TempApi.MyprojectsApi();import TempApi from '../src/i
         const insideSubDataElement = subDataElements[i-(chunk-1 )*subDataElements.length].querySelector("[annotationname = 'ptitle']");
         if(insideSubDataElement !== null){
           insideSubDataElement.textContent = data[revertIndex].ptitle;
-        }
-       } catch (e) { console.log(e) };try { 
-        const insideSubDataElement = subDataElements[i-(chunk-1 )*subDataElements.length].querySelector("[annotationname = 'pstart']");
-        if(insideSubDataElement !== null){
-          insideSubDataElement.textContent = data[revertIndex].pstart;
         }
        } catch (e) { console.log(e) };
             map.set(subDataElements[i-(chunk-1) * subDataElements.length].getAttribute('id'), data[data.length-i-1])
@@ -98,7 +91,97 @@ let apiMyprojectsApi = new TempApi.MyprojectsApi();import TempApi from '../src/i
         }
       }
     }
-  window.onload = () => {apiMyprojectsApi.getAllmyprojects((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("in3ic").querySelectorAll( "[dataitem='true']" )].filter(
+  document.getElementById('ixjnr9').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = '';
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("ixjnr9")) === true
+        ) {
+          transitionId = value._id;
+        }
+      });
+     location.href= '/view/' + transitionId;}};document.getElementById('irj0wo').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = '';
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("irj0wo")) === true
+        ) {
+          transitionId = value._id;
+        }
+      });
+     location.href= '/view/' + transitionId;}};document.getElementById('i3ojfq').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = '';
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("i3ojfq")) === true
+        ) {
+          transitionId = value._id;
+        }
+      });
+     location.href= '/view/' + transitionId;}};document.getElementById('iida7').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = '';
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("iida7")) === true
+        ) {
+          transitionId = value._id;
+        }
+      });
+     location.href= '/view/' + transitionId;}};document.getElementById('islze').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = '';
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("islze")) === true
+        ) {
+          transitionId = value._id;
+        }
+      });
+     location.href= '/view/' + transitionId;}};document.getElementById('iaype').onclick = (event) => {
+    event.preventDefault();
+    { 
+      let transitionId = '';
+      const storedData = window.localStorage.getItem("data");
+      const newMap = new Map(JSON.parse(storedData));
+      newMap.forEach((value, key) => {
+        if (
+          document
+            .getElementById(key)
+            .contains(document.getElementById("iaype")) === true
+        ) {
+          transitionId = value._id;
+        }
+      });
+     location.href= '/view/' + transitionId;}};window.onload = () => {apiMyprojectsApi.getAllmyprojects((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("in3ic").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();  data.forEach((item,i) => {
@@ -122,16 +205,6 @@ let apiMyprojectsApi = new TempApi.MyprojectsApi();import TempApi from '../src/i
       }
       else if(subDataElements[i].getAttribute('annotationname') === 'ptitle'){
         subDataElements[i].textContent = data[data.length -i -1].ptitle;
-        
-      }
-     } catch (e) { console.log(e) };try { 
-      const insideSubDataElement = subDataElements[i].querySelector("[annotationname = 'pstart']");
-      if(insideSubDataElement !== null){
-        insideSubDataElement.textContent = data[data.length -i -1].pstart;
-        
-      }
-      else if(subDataElements[i].getAttribute('annotationname') === 'pstart'){
-        subDataElements[i].textContent = data[data.length -i -1].pstart;
         
       }
      } catch (e) { console.log(e) };

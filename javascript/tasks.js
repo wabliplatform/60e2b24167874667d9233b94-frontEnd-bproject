@@ -1,6 +1,6 @@
 let apiTasksApi = new TempApi.TasksApi();import TempApi from '../src/index';document.getElementById('if40m').onclick = (event) => {
     event.preventDefault();
-    { location.href= '/';}};window.onload = () => {apiTasksApi.getAlltasks((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("if40m").querySelectorAll( "[dataitem='true']" )].filter(
+    {  location.href= '/' ;}};window.onload = () => {apiTasksApi.getAlltasks((error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); const subDataElements =[...document.getElementById("if40m").querySelectorAll( "[dataitem='true']" )].filter(
     (element, index, array) =>
     !array.reduce((hasAncestorFlag, dataItem) => hasAncestorFlag || (element.compareDocumentPosition(dataItem) & Node.DOCUMENT_POSITION_CONTAINS) === 8, false)
   );const map = new Map();  data.forEach((item,i) => {

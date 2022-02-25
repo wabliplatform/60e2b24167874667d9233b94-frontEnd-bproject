@@ -1,6 +1,6 @@
 let apiMyprojectsApi = new TempApi.MyprojectsApi();import TempApi from '../src/index';document.getElementById('iq3ap').onclick = (event) => {
     event.preventDefault();
-    { location.href= '/home';}};
+    {  location.href= '/home' ;}};
  const uploadImage = async (event) => {
         const file = event.target.files[0];
         const base64 = await convertBase64(file);
@@ -26,24 +26,4 @@ document.getElementById('formFile').addEventListener("change", async(e) => {
         });
 document.getElementById('i638p').onclick = (event) => {
     event.preventDefault();
-    let myprojectsId = window.location.pathname.replace('/update/','');
-      if(myprojectsId === '/update' || myprojectsId === ''){
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach( (value, key) => {
-          if(document.getElementById(key).contains(document.getElementById('i638p')) === true){
-            myprojectsId = value._id;
-          }
-        })
-      }
-   let myprojects = new TempApi.Myprojects();myprojects['ptitle'] = document.querySelector("[annotationname = 'ptitle']").value;myprojects['pstart'] = document.querySelector("[annotationname = 'pstart']").value;myprojects['pend'] = document.querySelector("[annotationname = 'pend']").value;myprojects['pdescription'] = document.querySelector("[annotationname = 'pdescription']").value;myprojects['pga'] = document.querySelector("[annotationname = 'pga']").value; let opts = {myprojects};apiMyprojectsApi.updatemyprojects( myprojectsId, opts, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); document.querySelector('[annotationname = ptitle]').value = response.body.query.ptitle ;document.querySelector('[annotationname = pstart]').value = response.body.query.pstart ;document.querySelector('[annotationname = pend]').value = response.body.query.pend ;document.querySelector('[annotationname = pdescription]').value = response.body.query.pdescription ;document.querySelector('[annotationname = pga]').value = response.body.query.pga ;{ location.href= '/view/'+response.body.query._id+'';}}});};window.onload = () => {let myprojectsId = window.location.pathname.replace('/update/','');
-      if(myprojectsId === '/update' || myprojectsId === ''){
-        const storedData = window.localStorage.getItem('data');
-        const newMap = new Map(JSON.parse(storedData));
-        newMap.forEach( (value, key) => {
-          if(document.getElementById(key).contains(document.getElementById('ibstc')) === true){
-            myprojectsId = value._id;
-          }
-        })
-      }
-   apiMyprojectsApi.getmyprojects( myprojectsId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); document.querySelector('[annotationname = ptitle]').value = response.body.query.ptitle ;document.querySelector('[annotationname = pstart]').value = response.body.query.pstart ;document.querySelector('[annotationname = pend]').value = response.body.query.pend ;document.querySelector('[annotationname = pdescription]').value = response.body.query.pdescription ;document.querySelector('[annotationname = pga]').value = response.body.query.pga ;}});};
+    let myprojectsId = window.location.pathname.replace('/update/','');let myprojects = new TempApi.Myprojects();myprojects['ptitle'] = document.querySelector("[annotationname = 'ptitle']").value;myprojects['pstart'] = document.querySelector("[annotationname = 'pstart']").value;myprojects['pend'] = document.querySelector("[annotationname = 'pend']").value;myprojects['pdescription'] = document.querySelector("[annotationname = 'pdescription']").value;myprojects['pga'] = document.querySelector("[annotationname = 'pga']").value; let opts = {myprojects};apiMyprojectsApi.updatemyprojects( myprojectsId, opts, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); document.querySelector('[annotationname = ptitle]').value = response.body.query.ptitle ;document.querySelector('[annotationname = pstart]').value = response.body.query.pstart ;document.querySelector('[annotationname = pend]').value = response.body.query.pend ;document.querySelector('[annotationname = pdescription]').value = response.body.query.pdescription ;document.querySelector('[annotationname = pga]').value = response.body.query.pga ;{  location.href= '/view/'+response.body.query._id+'' ;}}});};window.onload = () => {let myprojectsId = window.location.pathname.replace('/update/','');apiMyprojectsApi.getmyprojects( myprojectsId, (error, data, response) => { if (error) {console.error(error);} else { console.log('API called successfully. Returned data: ' + data); document.querySelector('[annotationname = ptitle]').value = response.body.query.ptitle ;document.querySelector('[annotationname = pstart]').value = response.body.query.pstart ;document.querySelector('[annotationname = pend]').value = response.body.query.pend ;document.querySelector('[annotationname = pdescription]').value = response.body.query.pdescription ;document.querySelector('[annotationname = pga]').value = response.body.query.pga ;}});};

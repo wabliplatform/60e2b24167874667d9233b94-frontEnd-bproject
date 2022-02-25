@@ -1,8 +1,8 @@
 let apiMyprojectsApi = new TempApi.MyprojectsApi();import TempApi from '../src/index';document.getElementById('iolui').onclick = (event) => {
     event.preventDefault();
-    { location.href= '/';}};document.getElementById('in3ic').onclick = (event) => {
+    {  location.href= '/' ;}};document.getElementById('in3ic').onclick = (event) => {
     event.preventDefault();
-    { location.href= '/';}};const onClickPaginationButton = (chunk, pagination) => {
+    {  location.href= '/' ;}};const onClickPaginationButton = (chunk, pagination) => {
     for (let i = 0; i < pagination.children.length; i++) {
       if (
         pagination.children[i].classList.value.includes("active") === true
